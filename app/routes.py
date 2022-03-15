@@ -24,6 +24,6 @@ def errors():
 
 	return errors
 
-@app.route('/test')
+@app.route('/new_test')
 def test():
-	return 'wow!'
+	return 'wowzers!'
