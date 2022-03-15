@@ -17,7 +17,7 @@ def git_pull():
 
 @app.route('/errors')
 def errors():
-	e_path = os.getcwd()+'app/static/error.log'
+	e_path = os.getcwd()+'/app/static/error.log'
 	errors = Path(e_path).read_text()
 
 	return errors
