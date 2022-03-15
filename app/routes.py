@@ -9,8 +9,11 @@ from pathlib import Path
 def index():
 	return "Hello :)"
 
-@app.route('/git/pull')
+@app.route('/git/pull', methods=['GET', 'POST'])
 def git_pull():
+	if request.method == 'POST':
+		return 'test'
+		
 	g_path = os.getcwd()
 	g = git.Git(g_path)
 	g.pull('origin', 'master')
