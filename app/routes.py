@@ -3,6 +3,7 @@ import os
 
 from app import app
 from pathlib import Path
+from flask import request
 
 @app.route('/')
 @app.route('/index')
@@ -13,7 +14,7 @@ def index():
 def git_pull():
 	if request.method == 'POST':
 		return 'test'
-		
+
 	g_path = os.getcwd()
 	g = git.Git(g_path)
 	g.pull('origin', 'master')
