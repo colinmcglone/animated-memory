@@ -28,7 +28,7 @@ def errors():
 	e_path = os.getcwd()+'/app/static/error.log'
 	errors = Path(e_path).read_text()
 
-	return errors
+	return errors[-1000:]
 
 @app.route('/newer_test')
 def test():
