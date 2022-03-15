@@ -23,3 +23,7 @@ def errors():
 	errors = Path(e_path).read_text()
 
 	return errors
+
+@app.route('/test')
+def test():
+	return 'wow!'
