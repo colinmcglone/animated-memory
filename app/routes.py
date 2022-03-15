@@ -13,13 +13,15 @@ def index():
 @app.route('/git/pull', methods=['GET', 'POST'])
 def git_pull():
 	if request.method == 'POST':
-		return 'test'
+		message = 'test'
+	else:
+		message = 'pulling...'
 
 	g_path = os.getcwd()
 	g = git.Git(g_path)
 	g.pull('origin', 'master')
 	Path(os.getcwd()+'/tmp/restart.txt').touch()
-	return 'pulling...'
+	return message
 
 @app.route('/errors')
 def errors():
