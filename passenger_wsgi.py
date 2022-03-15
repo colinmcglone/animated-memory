@@ -1,6 +1,7 @@
 import sys, os
 
-errfile = open('app/static/error.log', 'a')
+e_path = os.getdwd()+'app/static/error.log'
+errfile = open(e_path, 'a')
 os.close(sys.stderr.fileno())
 os.dup2(errfile.fileno(), sys.stderr.fileno())
 
