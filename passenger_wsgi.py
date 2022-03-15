@@ -1,6 +1,6 @@
 import sys, os
 
-errfile = open('~/tracker.colinmcglone.ca/app/static/error.log', 'a')
+errfile = open('app/static/error.log', 'a')
 os.close(sys.stderr.fileno())
 os.dup2(errfile.fileno(), sys.stderr.fileno())
 
