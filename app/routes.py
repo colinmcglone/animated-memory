@@ -11,3 +11,4 @@ def index():
 def git_pull():
 	repo = git.Repo('~/tracker.colinmcglone.ca')
 	repo.remotes.origin.pull()
+	return 'pulling...'
