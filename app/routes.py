@@ -1,6 +1,7 @@
 import git
 
 from app import app
+from pathlib import Path
 
 @app.route('/')
 @app.route('/index')
@@ -9,6 +10,7 @@ def index():
 
 @app.route('/git/pull')
 def git_pull():
-	repo = git.Repo('~/tracker.colinmcglone.ca')
-	repo.remotes.origin.pull()
+	g = git.Git('~/tracker.colinmcglone.ca')
+	g.pull('origin', 'master')
+	Path('~/tmp/restart.txt').touch()
 	return 'pulling...'
