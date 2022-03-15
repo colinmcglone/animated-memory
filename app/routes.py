@@ -14,3 +14,9 @@ def git_pull():
 	g.pull('origin', 'master')
 	Path('~/tmp/restart.txt').touch()
 	return 'pulling...'
+
+@app.route('/errors')
+def errors():
+	errors = Path('~/error.log').read_text()
+
+	return errors
