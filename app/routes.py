@@ -11,9 +11,10 @@ def index():
 
 @app.route('/git/pull')
 def git_pull():
-	g = git.Git('~/tracker.colinmcglone.ca')
+	g_path = os.getcwd()
+	g = git.Git(g_path)
 	g.pull('origin', 'master')
-	Path('~/tmp/restart.txt').touch()
+	Path(os.getcwd()+'/tmp/restart.txt').touch()
 	return 'pulling...'
 
 @app.route('/errors')
